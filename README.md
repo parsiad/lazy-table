@@ -42,9 +42,9 @@ def fib_table(n):
      yield [0, x0]
      yield [1, x1]
      for i in range(2, n + 1):
+         time.sleep(1)  # Simulate work
          x0, x1 = x1, x0 + x1
          yield [i, x1]
-         time.sleep(1)  # Simulate work
 
 lt.stream(fib_table(10), headers=['N', 'F_N'])
 ```
