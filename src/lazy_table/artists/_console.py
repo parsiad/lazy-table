@@ -36,12 +36,7 @@ class Console:
 class ConsoleWithProgress:
     """Renders a table to the console along with a progress bar.
 
-    Parameters
-    ----------
-    clear : bool, optional
-        Clears the screen every time the table is updated.
-    out : TextIOBase, optional
-        Text stream to write to. If unspecified, ``sys.stdout`` is used.
+    See docstring of ``Console`` for a list of parameters.
     """
     def __init__(self, clear=False, out=sys.stdout):
         self._clear = clear
