@@ -1,3 +1,3 @@
-__all__ = ['Console']
+__all__ = ['Console', 'ConsoleWithProgress']
 
-from ._console import Console
+from ._console import Console, ConsoleWithProgress

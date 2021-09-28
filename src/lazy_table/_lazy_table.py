@@ -3,7 +3,7 @@ from tabulate import tabulate
 from .artists import Console
 
 
-def stream(table, artist=None, **kwargs):
+def stream(table, artist=None, n_rows=None, **kwargs):
     """Streams a table.
 
     kwargs are forwarded to tabulate.
@@ -31,11 +31,15 @@ def stream(table, artist=None, **kwargs):
     artist : callable, optional
         A callable that takes as input a string table which determines how to render it. If unspecified,
         ``lazy_table.artists.Console`` is used.
+    n_rows : int, optional
+        Number of rows in table.
     """
     if artist is None:
         artist = Console()
     rows = []
+    t = tabulate(rows, **kwargs)
+    artist(t, n_rows)
     for row in table:
         rows.append(row)
         t = tabulate(rows, **kwargs)
-        artist(t)
+        artist(t, n_rows)
