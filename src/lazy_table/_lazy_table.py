@@ -28,9 +28,8 @@ def stream(table, artist=None, n_rows=None, **kwargs):
     ----------
     table : Generator[List[T], None, None]
         A generator which yields rows of the table.
-    artist : callable, optional
-        A callable that takes as input a string table which determines how to render it. If unspecified,
-        ``lazy_table.artists.Console`` is used.
+    artist : Callable[[str], None], optional
+        A callable which determines how to render a table. If unspecified, ``lazy_table.artists.Console()`` is used.
     n_rows : int, optional
         Number of rows in table.
     """
