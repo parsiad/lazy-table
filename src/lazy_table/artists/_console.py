@@ -52,9 +52,10 @@ class ConsoleWithProgress:
     def __call__(self, result, n_rows):
         if self._tqdm is None:
             self._tqdm = tqdm(total=n_rows)
+        else:
+            self._tqdm.update(1)
         _clear(self._clear, self._n_lines, self._out)
         self._n_calls += 1
-        self._n_lines = result.count('\n') + 4
-        self._tqdm.update(1)
+        self._n_lines = result.count('\n') + 3
         self._tqdm.write(result)
         self._tqdm.write('\n')
