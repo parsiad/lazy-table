@@ -47,12 +47,14 @@ class ConsoleWithProgress:
         self._n_lines = 0
         self._n_calls = -1
         self._out = out
+        self._tqdm = None
 
     def __call__(self, result, n_rows):
+        if self._tqdm is None:
+            self._tqdm = tqdm(total=n_rows)
         _clear(self._clear, self._n_lines, self._out)
         self._n_calls += 1
         self._n_lines = result.count('\n') + 4
-        with tqdm(file=self._out, total=n_rows) as progress_bar:
-            progress_bar.update(self._n_calls)
-            progress_bar.write(result)
-            progress_bar.write('\n')
+        self._tqdm.update(1)
+        self._tqdm.write(result)
+        self._tqdm.write('\n')
