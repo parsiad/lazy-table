@@ -1,3 +1,7 @@
+"""_console.py"""
+
+# pylint: disable=too-few-public-methods
+
 import sys
 
 from tqdm import tqdm

@@ -1,3 +1,5 @@
+"""_lazy_table.py"""
+
 from tabulate import tabulate
 
 from .artists import Console
@@ -36,9 +38,9 @@ def stream(table, artist=None, n_rows=None, **kwargs):
     if artist is None:
         artist = Console()
     rows = []
-    t = tabulate(rows, **kwargs)
-    artist(t, n_rows)
+    result = tabulate(rows, **kwargs)
+    artist(result, n_rows)
     for row in table:
         rows.append(row)
-        t = tabulate(rows, **kwargs)
-        artist(t, n_rows)
+        result = tabulate(rows, **kwargs)
+        artist(result, n_rows)

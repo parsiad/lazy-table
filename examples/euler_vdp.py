@@ -1,9 +1,11 @@
 #!/usr/bin/env python
+"""Produce a convergence table for Euler\'s method applied to the Van der Pol oscillator."""
+
+# pylint: disable=R0913
 
 import argparse
-
-import lazy_table as lt
 import numpy as np
+import lazy_table as lt
 
 
 def dynamics(state, damping_strength):
