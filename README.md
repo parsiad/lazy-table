@@ -1,3 +1,7 @@
+[![](https://static.pepy.tech/personalized-badge/lazy-table?period=total&units=international_system&left_color=grey&right_color=blue&left_text=pypi%20downloads)](https://pepy.tech/project/lazy-table)
+[![](https://badge.fury.io/py/lazy-table.svg)](https://badge.fury.io/py/lazy-table)
+![](https://img.shields.io/pypi/pyversions/lazy-table.svg)
+
 <p align="center">
   <img alt="lazy_table" src="https://raw.githubusercontent.com/parsiad/lazy-table/master/logo.png">
 </p>
