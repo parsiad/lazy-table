@@ -79,7 +79,7 @@ You can also specify an "artist" that determines how the table is rendered.
 For example, the `ConsoleWithProgress` artist displays a progress bar alongside the table indicating the percentage of rows completed:
 
 ```python
-n_rows = 10
+n = 10
 artist = lt.artists.ConsoleWithProgress()
-lt.stream(fib_table(n_rows), headers=['N', 'F_N'], n_rows=n_rows, artist=artist)
+lt.stream(fib_table(n), headers=['N', 'F_N'], n_rows=n + 1, artist=artist)
 ```
