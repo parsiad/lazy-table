@@ -39,8 +39,9 @@ def stream(table, artist=None, n_rows=None, **kwargs):
         artist = Console()
     rows = []
     result = tabulate(rows, **kwargs)
-    artist(result, n_rows)
+    artist.init(n_rows)
+    artist.render(result)
     for row in table:
         rows.append(row)
         result = tabulate(rows, **kwargs)
-        artist(result, n_rows)
+        artist.render(result)
