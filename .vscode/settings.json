@@ -1,0 +1,11 @@
+{
+    "editor.formatOnSave": true,
+    "mypy.dmypyExecutable": "${workspaceFolder}/.tox/code/bin/dmypy",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.tox/code/bin/python",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "${workspaceFolder}/.tox/code/bin/black",
+    "python.linting.pylintCategorySeverity.convention": "Warning",
+    "python.linting.pylintCategorySeverity.refactor": "Warning",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "${workspaceFolder}/.tox/code/bin/pylint"
+}

@@ -1,11 +1,20 @@
 """_lazy_table.py"""
 
+from typing import Generator, List, Optional, Sequence, TypeVar
+
 from tabulate import tabulate
 
-from .artists import Console
+from .artists import Artist, Console
+
+T = TypeVar("T")
 
 
-def stream(table, artist=None, n_rows=None, **kwargs):
+def stream(
+    table: Generator[Sequence[T], None, None],
+    artist: Artist = None,
+    n_rows: Optional[int] = None,
+    **kwargs,
+):
     """Streams a table.
 
     kwargs are forwarded to tabulate.
@@ -28,16 +37,16 @@ def stream(table, artist=None, n_rows=None, **kwargs):
 
     Parameters
     ----------
-    table : Generator[List[T], None, None]
+    table
         A generator which yields rows of the table.
-    artist : Callable[[str], None], optional
+    artist
         A callable which determines how to render a table. If unspecified, ``lazy_table.artists.Console()`` is used.
-    n_rows : int, optional
+    n_rows
         Number of rows in table.
     """
     if artist is None:
         artist = Console()
-    rows = []
+    rows: List[Sequence[T]] = []
     result = tabulate(rows, **kwargs)
     artist.init(n_rows)
     artist.render(result)
