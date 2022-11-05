@@ -1,3 +1,4 @@
+![](https://github.com/parsiad/lazy-table/actions/workflows/tox.yml/badge.svg)
 [![](https://static.pepy.tech/personalized-badge/lazy-table?period=total&units=international_system&left_color=grey&right_color=blue&left_text=pypi%20downloads)](https://pepy.tech/project/lazy-table)
 [![](https://badge.fury.io/py/lazy-table.svg)](https://badge.fury.io/py/lazy-table)
 ![](https://img.shields.io/pypi/pyversions/lazy-table.svg)
